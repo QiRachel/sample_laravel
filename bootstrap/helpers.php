@@ -10,7 +10,7 @@ function get_db_config()
             'database'=>substr($url['path'],1),
             'username'=>$url["user"],
             'password'=>$url['pass'],
-        ]
+        ];
     }else{
         return $db_config = [
             'connection'=>env('DB_CONNECTION','mysql'),
@@ -18,6 +18,6 @@ function get_db_config()
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
-        ]
+        ];
     }
 }
