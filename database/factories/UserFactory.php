@@ -15,11 +15,15 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\User::class, function (Faker $faker) {
     static $password;
-
+    $data_time = $faker->date.' '.$faker->time;
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'email' => $faker->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'is_admin'=>false,
+        'activated' => true,
+        'created_at'=>$data_time,
+        'updated_at'=>$data_time
     ];
 });

@@ -8523,3 +8523,9 @@ input {
   background-color: transparent;
 }
 
+.delete-btn {
+  float: right;
+  position: relative;
+  right: 0;
+}
+
